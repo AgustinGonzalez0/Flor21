@@ -1,0 +1,146 @@
+/* Fondo */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #000022, #000010 80%);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Texto */
+.titulo {
+  color: #ffeb3b;
+  font-size: 2.5vh;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 0 10px rgba(255, 255, 150, 0.7);
+  opacity: 0;
+  animation: fadeIn 4s ease-in-out forwards;
+}
+
+/* Tulipán flotante */
+.flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 5s ease-in-out infinite;
+  position: relative;
+}
+
+/* ✨ Brillos mágicos */
+.sparkles {
+  position: absolute;
+  top: -40px;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.sparkles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255,255,200,0.8);
+  animation: sparkle 3s infinite;
+}
+
+.sparkles span:nth-child(1) { top: 10%; left: 40%; animation-delay: 0s; }
+.sparkles span:nth-child(2) { top: 25%; left: 20%; animation-delay: 0.5s; }
+.sparkles span:nth-child(3) { top: 40%; left: 70%; animation-delay: 1s; }
+.sparkles span:nth-child(4) { top: 55%; left: 30%; animation-delay: 1.5s; }
+.sparkles span:nth-child(5) { top: 70%; left: 60%; animation-delay: 2s; }
+.sparkles span:nth-child(6) { top: 85%; left: 20%; animation-delay: 2.5s; }
+.sparkles span:nth-child(7) { top: 30%; left: 80%; animation-delay: 3s; }
+.sparkles span:nth-child(8) { top: 60%; left: 50%; animation-delay: 3.5s; }
+
+/* 🌷 Cabeza del tulipán */
+.flower__head {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  margin-bottom: -20px;
+}
+
+.petal {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  border-radius: 50% 50% 50% 50%;
+  background: radial-gradient(circle at 30% 30%, #ff7d66, #cc2f44 70%);
+  box-shadow: inset -3px -3px 10px rgba(0,0,0,0.2);
+}
+
+/* Pétalos */
+.petal--left {
+  left: -20px;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+.petal--right {
+  right: -20px;
+  transform: rotate(15deg);
+  z-index: 0;
+}
+
+.petal--center {
+  left: 20px;
+  right: 20px;
+  margin: auto;
+  height: 130px;
+  z-index: 1;
+  background: radial-gradient(circle at 40% 40%, #ff4d6d, #a00030 80%);
+}
+
+/* 🌱 Tallo */
+.stem {
+  width: 18px;
+  height: 180px;
+  background: linear-gradient(to bottom, #4caf50, #2e7d32);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* 🍃 Hojas */
+.leaf {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  background: linear-gradient(135deg, #80c0a1, #388e3c);
+  border-radius: 50% 0 50% 0;
+  box-shadow: inset -3px -3px 8px rgba(0,0,0,0.2);
+}
+
+.leaf--left {
+  left: -65px;
+  top: 60px;
+  transform: rotate(-30deg);
+}
+
+.leaf--right {
+  right: -65px;
+  top: 100px;
+  transform: rotate(30deg);
+}
+
+/* 🌊 Animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.6; }
+}
